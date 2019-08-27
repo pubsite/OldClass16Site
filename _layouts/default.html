@@ -1,16 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    {% if site.google_analytics %}
-      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-      </script>
-    {% endif %}
+
     <meta charset="UTF-8">
+
 {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
@@ -21,12 +14,20 @@
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <a href="http://ucme.icu" class="btn">班级天地</a>
+      <a href="http://ucme.icu/board" class="btn">通知公告</a>
+      <a href="http://ucme.icu/post" class="btn">活动风采</a>
+      <a href="http://ucme.icu/about" class="btn">关于我班</a>
     </header>
+
     <main id="content" class="main-content" role="main">
       {{ content }}
+
       <footer class="site-footer">
-        <span class="site-footer-owner">若无特殊声明，本站所有内容均采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a>进行许可。</span>
-        <span class="site-footer-credits">© 2019 <a href="http://Zhilu.fun">纸鹿君的个人小站 Zhilu.fun</a></span>
+        <a rel="stat" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+        <a rel="license" href="http://hits.dwyl.io/L33Z22L11/ucmeicu"><img alt="HitCount" style="border-width:0" src="http://hits.dwyl.io/L33Z22L11/ucmeicu.svg" /></a>
+        <span class="site-footer-owner">若无特殊声明，本站所有内容均采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>进行许可。</span>
+        <span class="site-footer-credits">© 2019 宝中22届16班 由<a href="http://Zhilu.fun">纸鹿君</a>提供技术支持</span>
       </footer>
     </main>
   </body>

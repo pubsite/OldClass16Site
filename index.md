@@ -1,9 +1,8 @@
 ---
-title: '你看着我，我看着你'
-description: 'You see me. I see you.'
+title: '宝中22届16班'
+description: '放飞希望 梦想起航 十六扬帆 共铸辉煌'
 ---
 
-这个网站，我也不知道做什么好。
+（网站正在持续更新中，如有素材，请QＱ联系：2399052066，感激不尽）
 
-[![添加QQ](https://img.shields.io/badge/添加QQ-2399052066-3af?style=flat-square&logo=tencent-qq)](http://wpa.qq.com/msgrd?v=3&uin=2399052066&site=qq&menu=yes)
-
+![](https://static2.ivwen.com/users/72109688/cecdbb45ace2394740fb41e8df54aa4c.jpg)
