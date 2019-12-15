@@ -15,5 +15,7 @@ description: '十六十六 我班最秀'
 
 [个人网站 zhilu.fun](http://zhilu.fun)
 
-[![](http://p.qlogo.cn/gh/895201887/895201887/100)](http://L33Z22L11.gitee.io/app16/16.apk)
+[![](http://p.qlogo.cn/gh/895201887/895201887/100)](http://L33Z22L11.gitee.io/app16/new.apk)[班级APP下载](http://L33Z22L11.gitee.io/app16/new.apk)
+
+![qrcode]( http://l33z22l11.gitee.io/app16/qr.png )
 
