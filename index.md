@@ -3,9 +3,6 @@ title: '宝中22届16班'
 description: '放飞希望 梦想起航 十六扬帆 共铸辉煌'
 ---
 
-16班APP全新推出，扫码或[点击此处](http://l33z22l11.gitee.io/app16/new.apk)下载
-
-![qrcode](http://l33z22l11.gitee.io/app16/qr.png )
 
 
 ![](https://static2.ivwen.com/users/72109688/cecdbb45ace2394740fb41e8df54aa4c.jpg)
