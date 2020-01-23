@@ -10,6 +10,47 @@
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    
+    
+    <script type="text/javascript">
+window.onload=clock;
+function clock(){
+	var today=new Date(),//当前时间
+		h=today.getHours(),
+		m=today.getMinutes(),
+		s=today.getSeconds();
+	var stopTime=new Date("Jan 31 2020 18:25:00"),//结束时间
+		stopH=stopTime.getHours(),
+		stopM=stopTime.getMinutes(),
+		stopS=stopTime.getSeconds();
+	var last=stopTime.getTime()-today.getTime(),//倒计时毫秒数
+		H=parseInt(last/3600000),//转换为时
+		lastH=parseInt(last)-parseInt(H*3600000),//除去时的毫秒数
+		M=parseInt(lastH/(60000)),//除去时的毫秒数转换成分钟
+		lastM=lastH-M*60000;//除去时分的毫秒数
+		S=parseInt((last-H*3600000-M*60000)/1000)//除去时分的毫秒数转化为秒
+	document.getElementById("timer").innerHTML=(H+"时"+M+"分"+S+"秒");
+	setTimeout(clock,500);
+}
+</script>
+
+<style type="text/css">
+#timer {
+	font-size: 48px;
+	font-family: sans-serif;
+	font-weight: 1000;
+}
+.timer{
+	background-color: #f80;
+	color: #fff;
+	font-size: 18px;
+	display: grid;
+	grid-auto-flow: column;
+	}
+</style>
+    
+    
+    
   </head>
   <body>
     <header class="page-header" role="banner">
@@ -22,6 +63,10 @@
       <a href="http://ucme.icu/about" class="btn">关于</a>
     </header>
 
+    
+    <div class="timer"><img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/><span>纸鹿君提醒：距离返校还有<div id="timer"/></span></div>
+    
+    
     <main id="content" class="main-content" role="main">
       {{ content }}
 
