@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>高一寒假结束倒计时</title>
+
+<style type="text/css">
+	body {
+		margin: 12px;
+		font-size: 48px;
+		text-align: center;
+		background-color: #08f;
+		color: #fff;
+	}
+	
+	#timer {
+		font-size: 72px;
+		font-family: sans-serif;
+		font-weight: 1000;
+	}
+</style>
+
+<script type="text/javascript">
+window.onload=clock;
+function clock(){
+	var today=new Date(),//当前时间
+		h=today.getHours(),
+		m=today.getMinutes(),
+		s=today.getSeconds();
+	var stopTime=new Date("Jan 31 2020 18:25:00"),//结束时间
+		stopH=stopTime.getHours(),
+		stopM=stopTime.getMinutes(),
+		stopS=stopTime.getSeconds();
+	var last=stopTime.getTime()-today.getTime(),//倒计时毫秒数
+		H=parseInt(last/3600000),//转换为时
+		lastH=parseInt(last)-parseInt(H*3600000),//除去时的毫秒数
+		M=parseInt(lastH/(60000)),//除去时的毫秒数转换成分钟
+		lastM=lastH-M*60000;//除去时分的毫秒数
+		S=parseInt((last-H*3600000-M*60000)/1000)//除去时分的毫秒数转化为秒
+	document.getElementById("timer").innerHTML=(H+"时"+"<br>"+M+"分"+"<br>"+S+"秒");
+	setTimeout(clock,500);
+}
+</script>
+
+</head>
+
+<body>
+<p>
+	<img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/><br />
+	纸鹿君提醒<br />距离返校还有<div id="timer"/>
+</p>
+</body>
+</html>
