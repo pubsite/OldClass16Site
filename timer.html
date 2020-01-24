@@ -35,9 +35,9 @@ function clock(){
 	var last=stopTime.getTime()-today.getTime(),//倒计时毫秒数
 		H=parseInt(last/3600000),//转换为时
 		lastH=parseInt(last)-parseInt(H*3600000),//除去时的毫秒数
-		M=parseInt(lastH/(60000)),//除去时的毫秒数转换成分钟
+		M=parseInt(lastH/60000),//除去时的毫秒数转换成分钟
 		lastM=lastH-M*60000;//除去时分的毫秒数
-		S=（last-H*3600000-M*60000)/1000//除去时分的毫秒数转化为秒
+		S=parseFloat(（last-H*3600000-M*60000)/1000)//除去时分的毫秒数转化为秒
 	document.getElementById("timer").innerHTML=(H+"时"+M+"分"+"<br>"+S+"秒");
 	setTimeout(clock,1);
 }
