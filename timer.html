@@ -6,49 +6,82 @@
 <title>高一返校倒计时</title>
 
 <style type="text/css">
-	body {
-		margin: 12px;
-		font-size: 36px;
-		text-align: center;
-		background-color: #08f;
-		color: #fff;}
-	img {
-		border-radius: 18px;}
-	span {
-		font-size: 48px;
-		font-family: sans-serif;
-		font-weight: 1000;}
+body {
+  text-align: center;
+  background-color: #08f;
+  color: #fff;
+  }
+a {
+  text-decoration: none;
+  }
+.profile {
+  border-radius: 24px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #fff;
+  }
+.foreword {
+  font-size: 24px;
+  }
+#timer {
+  font-size: 48px;
+  font-family: sans-serif;
+  font-weight: 1000;
+  }
+.button {
+  margin: 12px auto;
+  border-radius: 24px;
+  border-style: solid;
+  border-color: #fff;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  width: 180px;
+  }
+.ucme {
+  background: #fff;
+  color: #08f;
+  }
+.zhilu {
+
+  background: #08f;
+  color: #fff;
+  }
 </style>
 
 <script type="text/javascript">
 window.onload=clock;
 function clock(){
-	var today=new Date(),//当前时间
-		h=today.getHours(),
-		m=today.getMinutes(),
-		s=today.getSeconds();
-	var stopTime=new Date("Feb 7 2020 18:25:00"),//结束时间
-		stopH=stopTime.getHours(),
-		stopM=stopTime.getMinutes(),
-		stopS=stopTime.getSeconds();
-	var last=stopTime.getTime()-today.getTime(),//倒计时毫秒数
-		H=parseInt(last/3600000),//转换为时
-		lastH=parseInt(last)-parseInt(H*3600000),//除去时的毫秒数
-		M=parseInt(lastH/60000),//除去时的毫秒数转换成分钟
-		lastM=lastH-M*60000,//除去时分的毫秒数
-		S=parseFloat((last-H*3600000-M*60000)/1000);//除去时分的毫秒数转化为秒
-	var C=parseFloat(parseInt(last/149.19)/100000);
-	document.getElementById("timer").innerHTML=(H+"时"+M+"分"+"<br>"+S+"秒"+"<br>"+C+"%");
-	setTimeout(clock,1);
-}
+  var today=new Date(),
+  h=today.getHours(),
+  m=today.getMinutes(),
+  s=today.getSeconds()
+  var stopTime=new Date("Feb 7 2020 18:25:00"),
+  stopH=stopTime.getHours(),
+  stopM=stopTime.getMinutes(),
+  stopS=stopTime.getSeconds();
+  var last=stopTime.getTime()-today.getTime(),
+  H=parseInt(last/3600000),
+  lastH=parseInt(last)-parseInt(H*3600000),
+  M=parseInt(lastH/60000),
+  lastM=lastH-M*60000,
+  S=parseFloat((last-H*3600000-M*60000)/1000);
+  var C=parseFloat(parseInt(last/149.19)/100000);
+  document.getElementById("timer").innerHTML=(H+":"+M+":"+S+"<br>"+C+"%");
+  setTimeout(clock,1);
+  }
 </script>
 
 </head>
 
 <body>
-<p>
-<img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/><br />
-纸鹿君提醒<br />你的寒假余额<br /><strong><span id="timer"/></strong>
-</p>
+
+<img class="profile" src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/>
+<div class="foreword">纸鹿君提醒<br>你的寒假余额还有</div>
+<p><strong><span id="timer"/></strong></p>
+<a href="http://ucme.icu"><div class="button ucme">访问班级网站</div></a>
+<a href="http://zhilu.fun"><div class="button zhilu">访问纸鹿小站</div></a>
+
 </body>
+
 </html>
