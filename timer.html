@@ -11,22 +11,14 @@
 		font-size: 36px;
 		text-align: center;
 		background-color: #08f;
-		color: #fff;
-	}
-	
+		color: #fff;}
+	img {
+		border-radius: 18px;}
 	span {
 		font-size: 48px;
 		font-family: sans-serif;
-		font-weight: 1000;
-	}
+		font-weight: 1000;}
 </style>
-
-</head>
-
-<body>
-
-<img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/><br />
-纸鹿君提醒<br />距离<strong>返校</strong>还剩<br /><span id="timer"/>
 
 <script type="text/javascript">
 window.onload=clock;
@@ -35,7 +27,7 @@ function clock(){
 		h=today.getHours(),
 		m=today.getMinutes(),
 		s=today.getSeconds();
-	var stopTime=new Date("Jan 31 2020 18:25:00"),//结束时间
+	var stopTime=new Date("Feb 7 2020 18:25:00"),//结束时间
 		stopH=stopTime.getHours(),
 		stopM=stopTime.getMinutes(),
 		stopS=stopTime.getSeconds();
@@ -45,11 +37,18 @@ function clock(){
 		M=parseInt(lastH/60000),//除去时的毫秒数转换成分钟
 		lastM=lastH-M*60000,//除去时分的毫秒数
 		S=parseFloat((last-H*3600000-M*60000)/1000);//除去时分的毫秒数转化为秒
-	var C=parseFloat(parseInt(last/88.71)/100000);
+	var C=parseFloat(parseInt(last/149.19)/100000);
 	document.getElementById("timer").innerHTML=(H+"时"+M+"分"+"<br>"+S+"秒"+"<br>"+C+"%");
 	setTimeout(clock,1);
 }
 </script>
 
+</head>
+
+<body>
+<p>
+<img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/><br />
+纸鹿君提醒<br />你的寒假余额<br /><strong><span id="timer"/></strong>
+</p>
 </body>
 </html>
