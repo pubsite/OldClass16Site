@@ -45,7 +45,7 @@ function clock(){
 		M=parseInt(lastH/60000),//除去时的毫秒数转换成分钟
 		lastM=lastH-M*60000,//除去时分的毫秒数
 		S=parseFloat((last-H*3600000-M*60000)/1000);//除去时分的毫秒数转化为秒
-	var C=parseFloat(parseInt((last/88.71)/100000);
+	var C=parseFloat(parseInt(last/88.71)/100000);
 	document.getElementById("timer").innerHTML=(H+"时"+M+"分"+"<br>"+S+"秒"+"<br>"+C+"%");
 	setTimeout(clock,1);
 }
