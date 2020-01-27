@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>A屏黑倒计时</title>
+    <style>
+        html,body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: #000; }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+        #timer {
+            font-size: 48px;
+            font-weight:100;
+            text-align: center; }
+    </style>
+   
+<script type="text/javascript">
+window.onload=clock; 
+function clock(){
+	var today=new Date(),//当前时间
+		h=today.getHours(),
+		m=today.getMinutes(),
+		s=today.getSeconds();
+	var stopTime=new Date("Feb 7 2020 18:25:00"),//结束时间
+		stopH=stopTime.getHours(),
+		stopM=stopTime.getMinutes(),
+		stopS=stopTime.getSeconds();
+	var last=stopTime.getTime()-today.getTime(),
+		H=parseInt(last/3600000),
+		lastH=parseInt(last)-parseInt(H*3600000),
+		M=parseInt(lastH/60000),
+		lastM=lastH-M*60000,
+		S=parseInt((last-H*3600000-M*60000)/1000);
+	var C=parseFloat(parseInt(last/1491.9)/10000);
+	document.getElementById("timer").innerHTML=(H+":"+M+":"+S+"<br>"+C+"%");
+	setTimeout(clock,500);
+}
+</script>
+</head>
+<body>
+    <div id="timer"/>
+</body>
+</html>
