@@ -14,7 +14,7 @@
 		color: #fff;
 	}
 	
-	#timer {
+	span {
 		font-size: 48px;
 		font-family: sans-serif;
 		font-weight: 1000;
@@ -37,7 +37,9 @@ function clock(){
 		lastH=parseInt(last)-parseInt(H*3600000),//除去时的毫秒数
 		M=parseInt(lastH/60000),//除去时的毫秒数转换成分钟
 		lastM=lastH-M*60000;//除去时分的毫秒数
-		S=parseFloat((last-H*3600000-M*60000)/1000)//除去时分的毫秒数转化为秒
+		S=parseFloat((last-H*3600000-M*60000)/1000);//除去时分的毫秒数转化为秒
+	var C=100(today.getTime()-1579579200000)/887100000;
+	document.getElementById("percent").innerHTML=(C+"%");
 	document.getElementById("timer").innerHTML=(H+"时"+M+"分"+"<br>"+S+"秒");
 	setTimeout(clock,1);
 }
@@ -48,7 +50,8 @@ function clock(){
 <body>
 
 <img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/><br />
-纸鹿君提醒<br />距离<strong>返校</strong>还有<div id="timer"/>
+纸鹿君提醒<br />寒假已过去<span id="percent"><br />
+距离<strong>返校</strong>还有<span id="timer"/>
 
 </body>
 </html>
