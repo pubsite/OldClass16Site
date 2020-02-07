@@ -3,81 +3,77 @@
 <head>
 
 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<title>高一返校倒计时</title>
+<title>学习时长</title>
 
 <style type="text/css">
 body {
   text-align: center;
   background-color: #08f;
   color: #fff;
-  }
+}
 a {
   text-decoration: none;
-  }
+}
 .profile {
   border-radius: 24px;
-  border-width: 4px;
-  border-style: solid;
-  border-color: #fff;
-  }
+  border: 4px solid #fff;
+}
 .foreword {
   font-size: 24px;
-  }
+}
 #timer {
   font-size: 48px;
   font-family: sans-serif;
   font-weight: 1000;
-  }
+}
 .button {
   margin: 12px auto;
   border-radius: 24px;
-  border-style: solid;
-  border-color: #fff;
+  border:2px solid #fff;
   text-align: center;
   height: 36px;
   line-height: 36px;
   width: 180px;
-  }
+}
 .ucme {
   background: #fff;
   color: #08f;
-  }
+}
 .zhilu {
-
   background: #08f;
   color: #fff;
-  }
+}
 </style>
 
 <script type="text/javascript">
 window.onload=clock;
 function clock(){
-  var today=new Date(),
-  h=today.getHours(),
-  m=today.getMinutes(),
-  s=today.getSeconds()
-  var stopTime=new Date("Feb 7 2020 18:25:00"),
-  stopH=stopTime.getHours(),
-  stopM=stopTime.getMinutes(),
-  stopS=stopTime.getSeconds();
-  var last=stopTime.getTime()-today.getTime(),
-  H=parseInt(last/3600000),
-  lastH=parseInt(last)-parseInt(H*3600000),
+  var now=new Date(),
+  h=now.getHours(),
+  m=now.getMinutes(),
+  s=now.getSeconds();
+  var start=new Date("Jan 21 2020 12:00:00");
+  startH=start.getHours(),
+  startM=start.getMinutes(),
+  startS=start.getSeconds();
+  var last=now.getTime()-start.getTime(),
+  D=parseInt(last/86400000),
+  lastD=last-D*86400000,
+  H=parseInt(lastD/3600000),
+  lastH=lastD-H*3600000,
   M=parseInt(lastH/60000),
-  lastM=lastH-M*60000,
-  S=parseFloat((last-H*3600000-M*60000)/1000);
-  var C=parseFloat(parseInt(last/149.19)/100000);
-  document.getElementById("timer").innerHTML=(H+":"+M+":"+S+"<br>"+C+"%");
-  setTimeout(clock,1);
-  }
+  lastM=lastH-M*60000;
+  S=parseInt((last-D*86400000-H*3600000-M*60000)/1000),
+  document.getElementById("timer").innerHTML=(D+"天"+H+"时"+"<br>"+M+"分"+S+"秒");
+  setTimeout(clock,500);
+}
 </script>
-
 </head>
 
 <body>
 
 <img class="profile" src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/>
-<div class="foreword">纸鹿君提醒<br>你的寒假余额还有</div>
+<div class="foreword">纸鹿君提醒<br>你已在家学习</div>
 <p><strong><span id="timer"/></strong></p>
 <a href="http://ucme.icu"><div class="button ucme">访问班级网站</div></a>
 <a href="http://zhilu.fun"><div class="button zhilu">访问纸鹿小站</div></a>
