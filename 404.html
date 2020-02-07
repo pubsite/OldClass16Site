@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网页走丢了</title>
+<style>
+* {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  /*border:1px solid red;*/
+  }
+body {
+  background-color: #eee;
+  margin: 24px;
+  }
+.fl {
+  float: left;
+  }
+.fr {
+  float: right;
+  }
+.tw {
+  color: #fff;
+  }
+.tl {
+  color: #aaa;
+  }
+.card,.matrix td {
+  margin: 8px auto;
+  padding: 8px;
+  max-width: 480px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px #ddd;
+  }
+.cb {
+  background: linear-gradient(120deg, #08f, #06c);
+  box-shadow: 2px 2px 8px #08f;
+  }
+.cb *{
+  color: #fff;
+  }
+.sl {
+  margin: 12px auto;
+  height: 8px;
+  width: 24px;
+  border-radius: 4px;
+  background-color: #aaa;
+  }
+td {
+  margin: 8px;
+  }
+.profile {
+  height: 60px;
+  width: 60px;
+  border-radius:40px;
+  border: 4px solid #fff;
+  }
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  }
+.ar {
+  height: 8px;
+  width: 8px;
+  border-top: 2px solid #aaa;
+  border-right: 2px solid #aaa;
+  transform: rotate(45deg);
+  }
+.pl {
+  transform: rotate(225deg);
+  }
+.pu {
+  transform: rotate(315deg);
+  }
+.pd {
+  transform: rotate(135deg);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="cb card">
+<h1>404</h1>
+<p>这个链接可能有它自己的想法。</p>
+</div>
+
+<div class="sl"></div>
+
+<a href="#" onClick="javascript: history.back(-1);">
+<table class="card">
+<td>
+<div class="fl pl ar"/>
+</td>
+<td width="100%">
+<div class="title">返回上一页<div>
+</td>
+</table>
+</a>
+
+<a href="http://ucme.icu">
+<table class="card">
+<td>
+<div class="fl pl ar"/>
+</td>
+<td width="100%">
+<div class="title">回到班级主页</div>
+</td>
+</table>
+</a>
+
+<a href="http://zhilu.fun">
+<table class="card">
+<td width="100%">
+<div class="title">访问纸鹿小站</div>
+<span class="tl">Zhilu.fun</span>
+</td>
+<td>
+<div class="fr ar"/>
+</td>
+</table>
+</a>
+
+<a href="http://wpa.qq.com/msgrd?v=3&uin=2399052066&site=qq&menu=yes">
+<table class="card">
+<td>
+<img class="fl profile" src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"/>
+</td>
+<td width="100%">
+<div class="title">联系纸鹿</div>
+<span class="tl">QQ 2399052066</span>
+</td>
+<td>
+<div class="fr ar"/>
+</td>
+</table>
+</a>
+
+</div>
+
+</body>
+</html>
