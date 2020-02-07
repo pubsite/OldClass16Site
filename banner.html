@@ -1,38 +1,51 @@
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
 <script type="text/javascript">
 window.onload=clock;
 function clock(){
-	var today=new Date(),//当前时间
-		h=today.getHours(),
-		m=today.getMinutes(),
-		s=today.getSeconds();
-	var stopTime=new Date("Jan 31 2020 18:25:00"),//结束时间
-		stopH=stopTime.getHours(),
-		stopM=stopTime.getMinutes(),
-		stopS=stopTime.getSeconds();
-	var last=stopTime.getTime()-today.getTime(),//倒计时毫秒数
-		H=parseInt(last/3600000),//转换为时
-		lastH=parseInt(last)-parseInt(H*3600000),//除去时的毫秒数
-		M=parseInt(lastH/(60000)),//除去时的毫秒数转换成分钟
-		lastM=lastH-M*60000;//除去时分的毫秒数
-		S=parseFloat((last-H*3600000-M*60000)/1000)//除去时分的毫秒数转化为秒
-	document.getElementById("timer").innerHTML=(H+":"+M+":"+S);
-	setTimeout(clock,1);
+  var now=new Date(),
+  h=now.getHours(),
+  m=now.getMinutes(),
+  s=now.getSeconds();
+  var start=new Date("Jan 21 2020 12:00:00");
+  startH=start.getHours(),
+  startM=start.getMinutes(),
+  startS=start.getSeconds();
+  var last=now.getTime()-start.getTime(),
+  D=parseInt(last/86400000),
+  lastD=last-D*86400000,
+  H=parseInt(lastD/3600000),
+  lastH=lastD-H*3600000,
+  M=parseInt(lastH/60000),
+  lastM=lastH-M*60000;
+  S=parseInt((last-D*86400000-H*3600000-M*60000)/1000),
+  document.getElementById("timer").innerHTML=(D+"d"+H+":"+M+":"+S);
+  setTimeout(clock,500);
 }
 </script>
 
 <style type="text/css">
-body {margin: 0;}
-#timer {
-	font-size: 48px;
-	font-family: sans-serif;
-	font-weight: 1000;
+body {
+  margin: 0;
+  background-color: #f80;
+  color: #fff;
+  font-size: 24px;
 }
-.timer{
-	background-color: #f80;
-	color: #fff;
-	font-size: 24px;
-	}
+img {
+  border-radius: 12px;
+  border: 2px solid #fff;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+#timer {
+  font-size: 48px;
+  font-family: sans-serif;
+  font-weight: 800;
+}
 </style>
 
 
-<div class="timer"><img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=2"/><span>纸鹿君提醒：距<strong>返校</strong>还有<div id="timer"/></span></div>
+<img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=2"/>你已<strong>在家学习 <a href="http://ucme.icu/timer.html">全屏</a><div id="timer"/></strong>
