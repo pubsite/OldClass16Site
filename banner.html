@@ -1,59 +1,90 @@
-<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>假期计时窗</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+}
+.iframe {
+  height: 120px;
+  width: 320px;
+  background: linear-gradient(120deg, #08f, #06c);
+  color: white;
+  border-radius: 16px;
+}
+.profile {
+  margin: 0 8px;
+  height: 85px;
+  width: 85px;
+  border: 4px solid white;
+  border-radius: 50px;
+}
+.timer span {
+  font-weight: bolder;
+  font-size: 24px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 6px;
+}
+.fullscreen {
+  float: right;
+  background: white;
+  border-radius: 4px 0 0 4px;
+  color: #06c;
+}
+</style>
+</head>
+<body>
+<div class="iframe">
+<table cellspacing="0" cellpadding="0">
+<td width="100px">
+<img class="profile" src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"></img>
+<center>纸鹿君提醒</center>
+</td>
+<td class="timer" width="100%">
+你已在家学习
+<br>
+<span id="d"></span>天
+<span id="h"></span>时
+<span id="m"></span>分
+<span id="s"></span>秒
+<br>
+本学期已过去
+<br>
+<span id="p"></span>%
+<a class="fullscreen" href="http://ucme.icu/timer.html">⇱ 全屏</a>
+</td>
+</table>
+</body>
 <script type="text/javascript">
 window.onload=clock;
 function clock(){
-  var now=new Date(),
-  h=now.getHours(),
-  m=now.getMinutes(),
-  s=now.getSeconds();
+  var now=new Date();
   var start=new Date("Jan 21 2020 12:00:00");
-  startH=start.getHours(),
-  startM=start.getMinutes(),
-  startS=start.getSeconds();
+  var end=new Date("Jul 1 2020 0:00:00");
   var last=now.getTime()-start.getTime(),
   D=parseInt(last/86400000),
   lastD=last-D*86400000,
   H=parseInt(lastD/3600000),
   lastH=lastD-H*3600000,
   M=parseInt(lastH/60000),
-  lastM=lastH-M*60000;
-  S=parseInt((last-D*86400000-H*3600000-M*60000)/1000),
-  document.getElementById("timer").innerHTML=(D+"d"+H+":"+M+":"+S);
+  lastM=lastH-M*60000,
+  S=parseInt(lastM/1000);
+  var all=end.getTime()-start.getTime(),
+  P=parseInt(last/all*10000000)/100000;
+  document.getElementById("d").innerHTML=D;
+  document.getElementById("h").innerHTML=H;
+  document.getElementById("m").innerHTML=M;
+  document.getElementById("s").innerHTML=S;
+  document.getElementById("p").innerHTML=P;
   setTimeout(clock,500);
 }
 </script>
-
-<style type="text/css">
-body {
-  margin: 0;
-  background-color: #f80;
-  color: #fff;
-  font-size: 24px;
-}
-img {
-  border-radius: 12px;
-  border: 2px solid #fff;
-  vertical-align: middle;
-}
-a {
-  text-decoration: none;
-  color: #fff;
-}
-.fs {
-  float: right;
-  background-color: #fff;
-  color: #f80;
-  border-radius: 4px;
-}
-#timer {
-  font-size: 48px;
-  font-family: sans-serif;
-  font-weight: 800;
-}
-</style>
-
-<a class="fs" target="_blank" href="http://ucme.icu/timer.html">全屏</a>
-<img src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=2"/>
-你已<strong>在家学习
-<div id="timer"/></strong>
+</html>
