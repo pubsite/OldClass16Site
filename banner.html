@@ -5,61 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>假期计时窗</title>
 <style>
-body {
+html, body {
   margin: 0;
   padding: 0;
+  background: #eee;
+  width: 100%;
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
 }
 a {
   text-decoration: none;
 }
 .iframe {
-  height: 120px;
-  width: 320px;
   background: linear-gradient(120deg, #08f, #06c);
+  width: 320px;
+  height: 120px;
   color: white;
   border-radius: 16px;
 }
 .profile {
-  margin: 0 8px;
-  height: 85px;
-  width: 85px;
+  margin: 0 auto -12px;
+  height: 60px;
+  width: 60px;
+  background: url(http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3);
+  background-size: 100% 100%;
   border: 4px solid white;
   border-radius: 50px;
+}
+.button {
+  padding: 2px 8px;
+  background: white;
+  color: #08f;
+  border-radius: 24px;
 }
 .timer span {
   font-weight: bolder;
   font-size: 24px;
   background: rgba(0,0,0,0.4);
   border-radius: 6px;
+  padding: 0 3px;
 }
-.fullscreen {
+.rtag {
+  padding: 0 8px;
   float: right;
   background: white;
-  border-radius: 4px 0 0 4px;
+  border-radius: 24px 0 0 24px;
   color: #06c;
 }
 </style>
 </head>
 <body>
-<div class="iframe">
-<table cellspacing="0" cellpadding="0">
-<td width="100px">
-<img class="profile" src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"></img>
-<center>纸鹿君提醒</center>
+<table class="iframe" cellspacing="0" cellpadding="0">
+<td width="96px" align="center">
+<div class="profile"></div>
+<a class="button" href="http://wpa.qq.com/msgrd?v=3&uin=2399052066&site=qq&menu=yes">+ QQ</a>
+<div>纸鹿 =w=</div>
 </td>
-<td class="timer" width="100%">
-你已在家学习
-<br>
+<td class="timer">
+<div>你已在家学习</div>
 <span id="d"></span>天
-<span id="h"></span>时
-<span id="m"></span>分
-<span id="s"></span>秒
-<br>
-本学期已过去
-<br>
+<span id="h"></span>:
+<span id="m"></span>:
+<span id="s"></span>
+<div>本学期已过去</div>
 <span id="p"></span>%
-<a class="fullscreen" href="http://ucme.icu/timer.html">⇱ 全屏</a>
+<a class="rtag" href="http://ucme.icu/timer.html">⇱ 全屏</a>
 </td>
 </table>
 </body>
