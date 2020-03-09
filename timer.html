@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,10 +104,10 @@ span#h, span#m {
   font-size: 250%;
 }
 
-</style>
+</style><link id="x_link_extra_css_id" rel="stylesheet" href="data:text/css,html,body,a,div,p,img,textarea{-webkit-touch-callout:text !important;-webkit-user-select:text !important;user-select:text !important;}">
 
 
-</head>
+</head><style type="text/css" id="x_style_extra_css_id">data:text/css,html,body,a,div,p,img,textarea{-webkit-touch-callout:text !important;-webkit-user-select:text !important;user-select:text !important;}</style>
 
 <body>
 
@@ -128,16 +126,16 @@ span#h, span#m {
 <div class="fr button">At Home</div>
 <h3>在家学习时长</h3>
 <h6>/ Studying Duration</h6>
-<span id="d"></span>天
-<span id="h"></span>:
-<span id="m"></span>:
-<span id="s"></span>
+<span id="d">48</span>天
+<span id="h">09</span>:
+<span id="m">06</span>:
+<span id="s">43</span>
 </div>
 
 <div class="timer">
 <div class="fr button" style="position:relative">
 Here is a porgress bar
-<div id="tp" style="width:3%">
+<div id="tp" style="width: 29%;">
 <div class=" nmg wbutton button">
 Here is a porgress bar
 </div>
@@ -164,8 +162,8 @@ Here is a porgress bar
 <div class="fr wbutton button">=w=</div>
 <div class="flex">
 <div class="fl">
-<img class="profile" src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"></img>
-<a href="http://wpa.qq.com/msgrd?v=3&uin=2399052066&site=qq&menu=yes" class="wbutton button">+ QQ</a>
+<img class="profile" src="http://thirdqq.qlogo.cn/g?b=qq&amp;nk=2399052066&amp;s=3">
+<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2399052066&amp;site=qq&amp;menu=yes" class="wbutton button">+ QQ</a>
 </div>
 &nbsp;&nbsp;
 <div>
@@ -182,7 +180,7 @@ Here is a porgress bar
 </div>
 </div>
 
-</body>
+
 <script type="text/javascript">
 window.onload=timer;
 function timer(){
@@ -192,23 +190,29 @@ function timer(){
   var hours = parseInt(last / 1000 / 60 / 60 % 24, 10); 
   var minutes = parseInt(last / 1000 / 60 % 60, 10); 
   var seconds = parseInt(last / 1000 % 60, 10);
-  rate = last/all,
-  percent = parseInt(rate * 100),
-  cent = parseInt(rate * 10000000- percent * 100000);
+  var rate = last / all * 100;
+  var percent = parseInt(rate);
+  var cent = parseInt(rate * 100000 % 100000);
   document.getElementById("d").innerHTML = days;
-  document.getElementById("h").innerHTML = digit(hours);
-  document.getElementById("m").innerHTML = digit(minutes);
-  document.getElementById("s").innerHTML = digit(seconds);
+  document.getElementById("h").innerHTML = two(hours);
+  document.getElementById("m").innerHTML = two(minutes);
+  document.getElementById("s").innerHTML = two(seconds);
   document.getElementById("p").innerHTML = percent;
-  document.getElementById("c").innerHTML = cent;
+  document.getElementById("c").innerHTML = five(cent); //
   var tp = document.getElementById("tp");
-  tp.style.width = percent + "%";
+  tp.style.width = rate + "%";
   setTimeout(timer,500);
 }
 
-function digit(i){
-  if(i<10){i="0"+i;}
+function two(i){
+  if(i < 10) {i = "0" + i; }
   return i;
 }
+
+function five(i){
+  return ('00000'+ i).slice(-5);
+}
 </script>
+
+</body>
 </html>
