@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>假期计时</title>
+
 <style>
 * {
-  /*border:1px solid red*/
+  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   color: white;
 }
 html {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 body {
-  margin: 0 24px;
+  margin: 0 auto;
   background: #eee;
-  background-attachment: fixed;
   font-size: 16px;
   max-width: 640px;
 }
@@ -26,12 +27,22 @@ a {
   color: black;
   text-decoration: none;
 }
-h1, h2, h3, h4, h5, h6 {
-  text-shadow: #06c 2px 2px 2px;
-}
 table {
   table-layout: fixed;
   word-break: break-all;
+}
+.nmg {
+  margin: 0 !important;
+}
+.npd {
+  padding: 0 !important;
+}
+.flex {
+  display: flex;
+  /* align-items: center; */
+}
+.ib {
+  display: inline-block;
 }
 .fl {
   float: left;
@@ -39,23 +50,28 @@ table {
 .fr {
   float: right;
 }
-/*纸鹿-分割线*/
-.container > * {
+/*纸鹿-分割线-card*/
+.container > div {
   margin: 12px auto;
   padding: 12px;
+  width: 80%;
   display: block;
   background: linear-gradient(120deg, #08f, #06c);
   border-radius: 24px;
+  text-align: center;
   box-shadow: #bdf 4px 4px 8px;
+}
+h1, h2, h3, h4, h5, h6, p, span{
+  text-align: left;
+  text-shadow: #06c 2px 2px 2px;
 }
 .profile {
   margin: 0 auto -16px;
-  height: 80px;
-  width: 80px;
-  background: url(http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3);
-  background-size: 100% 100%;
+  height: 75px;
+  width: 75px;
+  display: block;
   border-radius: 50px;
-  box-shadow: #06c 2px 2px 8px;
+  box-shadow: #06c 2px 2px 2px;
 }
 .button {
   margin: 4px;
@@ -68,99 +84,131 @@ table {
 .wbutton {
   background: white;
   color: #08f;
-  box-shadow: #06c 2px 2px 8px;
+  box-shadow: #06c 2px 2px 2px;
 }
+#tp {
+  margin: 0 !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*纸鹿-分割线-timer*/
 .timer span {
   font-weight: bolder;
   font-size: 200%;
-  text-shadow: #06c 2px 2px 2px;
 }
 span#d, span#p {
   font-size: 400%;
 }
 span#h, span#m {
-  font-size: 300%;
+  font-size: 250%;
 }
+
 </style>
+
+
 </head>
+
 <body>
+
 <div class="container">
 
 <div>
 <a href="http://ucme.icu/banner.html" class="fr wbutton button">⇲ 小窗</a>
-<h2>假期计时板</h2>
-<h6>&nbsp;Vacation timer</h6>
+<h2>假期计时</h2>
+<h5>/ Vacation Timer</h5>
 <a href="http://ucme.icu" class="button">班级官网</a>
-<a href="http://l33z22l11.gitee.io/app16/sl.apk" class="button"><u>↓</u> 拾陆APP</a>
 <a href="http://fileport.github.io" class="button">网课回放</a>
-<a href="http://l33z22l11.gitee.io/app16/wk.apk" class="button"><u>↓</u> 宝中网课APP</a>
 <a href="http://l33z22l11.gitee.io/app16/wk.jpg" class="button">课程表</a>
-<a href="http://new.ucme.icu" class="button">测试班级博客(慢)</a>
 </div>
 
 <div class="timer">
-<div class="fr button">Soo looong</div>
-<h3>你已在家学习</h3>
-<h6>&nbsp;You&#39;ve been studying at home for</h6>
-<center>
+<div class="fr button">At Home</div>
+<h3>在家学习时长</h3>
+<h6>/ Studying Duration</h6>
 <span id="d"></span>天
 <span id="h"></span>:
 <span id="m"></span>:
 <span id="s"></span>
-</center>
 </div>
 
 <div class="timer">
-<div class="fr button">Very fast</div>
-<h3>本学期已过去</h3>
-<h6>&nbsp;This term is going on</h6>
-<center><span id="p"></span>.<span id="c"></span>%</center>
+<div class="fr button" style="position:relative">
+Here is a porgress bar
+<div id="tp" style="width:3%">
+<div class=" nmg wbutton button">
+Here is a porgress bar
+</div>
+</div>
+</div>
+<h3>学期进度</h3>
+<h6>/ Term Progress</h6>
+<center>
+<span id="p"></span>.
+<span id="c"></span>%
+</center>
 </div>
 
-<table>
-<td align="center">
-<div class="profile"></div>
+<div>
+<div class="fr button">OvO</div>
+<h3>相关链接</h3>
+<h6>/ Related Links</h6>
+<a href="http://l33z22l11.gitee.io/app16/sl.apk" class="button"><u>⬇</u> 拾陆APP</a>
+<a href="http://l33z22l11.gitee.io/app16/wk.apk" class="button"><u>⬇</u> 宝中网课APP</a>
+<a href="http://new.ucme.icu" class="button">测试班级博客(慢)</a>
+</div>
+
+<div>
+<div class="fr wbutton button">=w=</div>
+<div class="flex">
+<div class="fl">
+<img class="profile" src="http://thirdqq.qlogo.cn/g?b=qq&nk=2399052066&s=3"></img>
 <a href="http://wpa.qq.com/msgrd?v=3&uin=2399052066&site=qq&menu=yes" class="wbutton button">+ QQ</a>
-</td>
-<td width="100%">
-<div class="fr wbutton button">摸鱼中</div>
-<h3>纸鹿 Zhilu</h3>
-<h6>Coooooooooooooo</h6>
+</div>
+&nbsp;&nbsp;
+<div>
+<h3>纸鹿 / Zhilu</h3>
+<h4>● 摸鱼中</h4>
+<p>给我时间，我也不知道我会写出什么</p>
+</div>
+</div>
 <a href="http://zhilu.fun" class="button">纸鹿小站</a>
 <a href="http://music.163.com/user/444705789" class="button">网易云音乐</a>
 <a href="https://space.bilibili.com/108831145" class="button">Bilibili</a>
 <a href="http://github.com/l33z22l11" class="button">GitHub</a>
 <a href="http://mine.ly/zhilu.2" class="button">Minecraft</a>
-</td>
-</table>
-
 </div>
+</div>
+
 </body>
 <script type="text/javascript">
-window.onload=clock;
-function clock(){
-  var now=new Date();
-  var start=new Date("Jan 21 2020 12:00:00");
-  var end=new Date("Jul 1 2020 0:00:00");
-  var last=now.getTime()-start.getTime(),
-  D=parseInt(last/86400000),
-  lastD=last-D*86400000,
-  H=parseInt(lastD/3600000),
-  lastH=lastD-H*3600000,
-  M=parseInt(lastH/60000),
-  lastM=lastH-M*60000,
-  S=parseInt(lastM/1000);
-  var all=end.getTime()-start.getTime(),
-  R=last/all,
-  P=parseInt(R*100),
-  C=parseInt(R*10000000-P*100000);
-  document.getElementById("d").innerHTML=D;
-  document.getElementById("h").innerHTML=H;
-  document.getElementById("m").innerHTML=M;
-  document.getElementById("s").innerHTML=S;
-  document.getElementById("p").innerHTML=P;
-  document.getElementById("c").innerHTML=C;
-  setTimeout(clock,500);
+window.onload=timer;
+function timer(){
+  var last = (new Date())-(new Date("Jan 21 2020 12:00:00"));
+  var all = (new Date("Jul 1 2020 0:00:00"))-(new Date("Jan 21 2020 12:00:00"));
+  var days = parseInt(last / 1000 / 60 / 60 / 24, 10); 
+  var hours = parseInt(last / 1000 / 60 / 60 % 24, 10); 
+  var minutes = parseInt(last / 1000 / 60 % 60, 10); 
+  var seconds = parseInt(last / 1000 % 60, 10);
+  rate = last/all,
+  percent = parseInt(rate * 100),
+  cent = parseInt(rate * 10000000- percent * 100000);
+  document.getElementById("d").innerHTML = days;
+  document.getElementById("h").innerHTML = digit(hours);
+  document.getElementById("m").innerHTML = digit(minutes);
+  document.getElementById("s").innerHTML = digit(seconds);
+  document.getElementById("p").innerHTML = percent;
+  document.getElementById("c").innerHTML = cent;
+  var tp = document.getElementById("tp");
+  tp.style.width = percent + "%";
+  setTimeout(timer,500);
+}
+
+function digit(i){
+  if(i<10){i="0"+i;}
+  return i;
 }
 </script>
 </html>
