@@ -194,23 +194,18 @@ function timer(){
   var percent = parseInt(rate);
   var cent = parseInt(rate * 100000 % 100000);
   document.getElementById("d").innerHTML = days;
-  document.getElementById("h").innerHTML = two(hours);
-  document.getElementById("m").innerHTML = two(minutes);
-  document.getElementById("s").innerHTML = two(seconds);
+  document.getElementById("h").innerHTML = addZero(hours, 2);
+  document.getElementById("m").innerHTML = addZero(minutes, 2);
+  document.getElementById("s").innerHTML = addZero(seconds, 2);
   document.getElementById("p").innerHTML = percent;
-  document.getElementById("c").innerHTML = five(cent); //
+  document.getElementById("c").innerHTML = addZero(cent, 5); //
   var tp = document.getElementById("tp");
   tp.style.width = rate + "%";
   setTimeout(timer,500);
 }
 
-function two(i){
-  if(i < 10) {i = "0" + i; }
-  return i;
-}
-
-function five(i){
-  return ('00000'+ i).slice(-5);
+function addZero(num, digit){
+  return ('000000000000' + num).slice(-digit);
 }
 </script>
 
