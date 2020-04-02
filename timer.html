@@ -10,25 +10,30 @@
         /* border: 1px solid red; */
         margin: 0;
         padding: 0;
-        color: white;
+        text-align: left;
+        text-shadow: var(--shadow) 2px 2px 2px;
+      }
+      :root {
+        --dark-color: #000;
+        --light-color: #fff;
+        --primary-color: #0b9;
+        --accent-color: #7fb;
+        --dark-color: #096;
+        --shadow: rgba(0, 0, 0, 0.3);
       }
       html {
         width: 100%;
         min-height: 100%;
       }
       body {
-        margin: 0 auto;
+        width: 100%;
+        min-height: 100%;
         background: #eee;
         font-size: 16px;
-        max-width: 640px;
       }
       a {
         color: black;
         text-decoration: none;
-      }
-      table {
-        table-layout: fixed;
-        word-break: break-all;
       }
       .nmg {
         margin: 0 !important;
@@ -36,12 +41,20 @@
       .npd {
         padding: 0 !important;
       }
+      .c {
+        text-align: center;
+      }
       .flex {
         display: flex;
-        /* align-items: center; */
+        align-items: center;
       }
       .ib {
         display: inline-block;
+      }
+      #tab {
+        word-break: break-all;
+        white-space: nowrap;
+        overflow: scroll;
       }
       .fl {
         float: left;
@@ -49,50 +62,70 @@
       .fr {
         float: right;
       }
-      /*纸鹿-分割线-card*/
-      .card {
-        margin: 12px auto;
-        padding: 12px;
-        width: 80%;
-        display: block;
-        background: linear-gradient(120deg, #08f, #06c);
-        border-radius: 24px;
-        text-align: center;
-        box-shadow: #bdf 4px 4px 8px;
+      /*纸鹿-分割线-box*/
+      .container {
+        margin: 0 auto;
+        /* padding: 12px; */
+        width: 90%;
+        max-width: 960px;
       }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      p,
-      span {
-        text-align: left;
-        text-shadow: #06c 2px 2px 2px;
+      .container > * {
+        margin: 0 auto 12px;
+      }
+      .banner {
+        margin: 0 0 36px;
+        padding: 96px 12px 12px;
+        background: linear-gradient(
+          120deg,
+          var(--primary-color),
+          var(--dark-color)
+        );
+        color: var(--light-color);
+      }
+      .box {
+        padding: 12px;
+        display: block;
+        background: linear-gradient(
+          120deg,
+          var(--primary-color),
+          var(--dark-color)
+        );
+        border-radius: 24px;
+        box-shadow: var(--shadow) 4px 4px 8px;
+        color: var(--light-color);
+      }
+      .ff span {
+        font-size: 150%;
+        font-weight: bolder;
+      }
+      .fff span {
+        font-size: 250%;
+        font-weight: bolder;
       }
       .profile {
         margin: 0 auto -16px;
-        height: 75px;
-        width: 75px;
+        height: 60px;
+        width: 60px;
         display: block;
+        border: 3px solid var(--light-color);
         border-radius: 50px;
-        box-shadow: #06c 2px 2px 2px;
+        box-shadow: var(--shadow) 2px 2px 2px;
       }
       .button {
         margin: 4px;
         padding: 2px 8px;
         display: inline-block;
-        background: rgba(0, 0, 0, 0.3);
-        color: white;
+        background: var(--shadow);
+        color: var(--light-color);
         border-radius: 24px;
+        text-shadow: none;
       }
-      .wbutton {
-        background: white;
-        color: #08f;
-        box-shadow: #06c 2px 2px 2px;
+      .hlbutton {
+        background: var(--light-color);
+        color: var(--primary-color);
+        box-shadow: var(--shadow) 2px 2px 2px;
       }
-      #tp {
+      #bar {
         margin: 0 !important;
         position: absolute;
         left: 0;
@@ -100,139 +133,185 @@
         white-space: nowrap;
         overflow: hidden;
       }
-      /*纸鹿-分割线-timer*/
-      .timer span {
-        font-weight: bolder;
-        font-size: 200%;
-      }
-      span#d,
-      span#p {
-        font-size: 400%;
-      }
-      span#h,
-      span#m {
-        font-size: 250%;
-      }
     </style>
   </head>
 
   <body>
+    <div class="banner">
+      <h1>学期计时板</h1>
+      <h3>团结一致 共克时艰</h3>
+      <a href="//ucme.icu/banner.html" class="fr hlbutton button">⇲ 小窗</a>
+    </div>
+
     <div class="container">
-      <div class="card">
-        <a href="http://ucme.icu/banner.html" class="fr wbutton button"
-          >⇲ 小窗</a
+      <div class="fr button" id="unfold" onclick="tabswitch()">v</div>
+      <div class="c" id="tab">
+        <a href="//ucme.icu" class="button">16官网</a>
+        <a href="//ucme.icu" class="button">16博客</a>
+        <a href="//fileport.github.io" class="button">网课&课本</a>
+        <a href="//l33z22l11.gitee.io/app16/wk.jpg" class="button">课程表</a>
+        <a href="//l33z22l11.gitee.io/app16/sl.apk" class="button"
+          ><u>⬇</u> 拾陆APP</a
         >
-        <h2>停课不停学</h2>
-        <h5>/ Timer</h5>
-        <a href="http://ucme.icu" class="button">班级官网</a>
-        <a href="https://fileport.github.io" class="button">网课回放</a>
-        <a href="https://fileport.github.io" class="button">电子课本</a>
-        <a href="http://l33z22l11.gitee.io/app16/wk.jpg" class="button"
-          >课程表</a
+        <a href="//l33z22l11.gitee.io/app16/wk.apk" class="button"
+          ><u>⬇</u> 宝中网课APP</a
         >
+        <a href="//new.ucme.icu" class="button">测试班级博客(慢)</a>
+        <span id="tabend">别看了，没有了=w=</span>
       </div>
 
-      <div class="timer card">
-        <div class="fr button">At Home</div>
-        <h3>在家学习时长</h3>
-        <h6>/ Studying Duration</h6>
-        <span id="d">加</span>
-        <p class="ib">天</p>
-        <span id="h">载</span>
-        <p class="ib">:</p>
-        <span id="m">失</span>
-        <p class="ib">:</p>
-        <span id="s">败</span>
+      <div class="c box">
+        <div class="ib">
+          <h3 class="c">在家学习</h3>
+          <p class="c ff"><span id="hd">出</span> 天</p>
+        </div>
+        &nbsp;&nbsp;
+        <div class="ib">
+          <h3 class="c">距返校</h3>
+          <p class="c ff"><span id="bd">错</span> 天</p>
+        </div>
+        &nbsp;&nbsp;
+        <div class="ib">
+          <h3 class="c">高三开学</h3>
+          <p class="c ff"><span id="thd">了</span> 天</p>
+        </div>
       </div>
 
-      <div class="timer card">
+      <div class="box">
+        <h3>高考倒计时</h3>
+        <p class="c fff">
+          <span id="ed">加</span> 天 <span id="eh">载</span> :
+          <span id="em">失</span> :
+          <span id="es">败</span>
+        </p>
+      </div>
+
+      <!-- <div class="box">
         <div class="fr button" style="position:relative;">
           Here is a progress bar
-          <div id="tp" style="width: 14%;">
-            <div class="nmg wbutton button">
+          <div id="bar">
+            <div class="nmg hlbutton button">
               Here is a progress bar
             </div>
           </div>
-        </div>
+        </div> -->
+
+      <div class="box">
         <h3>学期进度</h3>
-        <h6>/ Term Progress</h6>
-          <span id="p">纸鹿</span>
-          <p class="ib">.</p>
-          <span id="c">不清楚</span>
-          <p class="ib">%</p>
+        <p class="c fff">
+          <span id="pi">纸鹿</span> . <span id="pd">不清楚</span> %
+        </p>
       </div>
 
-      <div class="card">
-        <div class="fr wbutton button">=w=</div>
-        <h3>相关链接</h3>
-        <h6>/ Related Links</h6>
-        <a href="http://l33z22l11.gitee.io/app16/sl.apk" class="button"
-          ><u>⬇</u> 拾陆APP</a
+      <!-- <div class="box">
+        <div class="flex"> -->
+      <div class="c">
+        <img
+          class="profile"
+          src="//thirdqq.qlogo.cn/g?b=qq&amp;nk=2399052066&amp;s=3"
+        />
+        <a
+          href="//wpa.qq.com/msgrd?v=3&amp;uin=2399052066&amp;site=qq&amp;menu=yes"
+          class="hlbutton button"
+          >+ QQ</a
         >
-        <a href="http://l33z22l11.gitee.io/app16/wk.apk" class="button"
-          ><u>⬇</u> 宝中网课APP</a
-        >
-        <a href="http://new.ucme.icu" class="button">测试班级博客(慢)</a>
       </div>
-
-      <div class="card">
-        <div class="flex">
-          <div class="fl">
-            <img
-              class="profile"
-              src="http://thirdqq.qlogo.cn/g?b=qq&amp;nk=2399052066&amp;s=3"
-            />
-            <a
-              href="http://wpa.qq.com/msgrd?v=3&amp;uin=2399052066&amp;site=qq&amp;menu=yes"
-              class="wbutton button"
-              >+ QQ</a
-            >
-          </div>
-          &nbsp;&nbsp;
+      <!-- &nbsp;&nbsp;
           <div width="100%">
             <h3>纸鹿 / Zhilu</h3>
             <h4>● 摸鱼中</h4>
             <p>给我时间，我也不知道我会写出什么</p>
           </div>
         </div>
-        <a href="http://zhilu.fun" class="button">纸鹿小站</a>
-        <a href="http://music.163.com/user/444705789" class="button"
-          >网易云音乐</a
-        >
-        <a href="https://space.bilibili.com/108831145" class="button"
-          >Bilibili</a
-        >
-        <a href="http://github.com/l33z22l11" class="button">GitHub</a>
-        <a href="http://mine.ly/zhilu.2" class="button">Minecraft</a>
-      </div>
+        <a href="//zhilu.fun" class="button">纸鹿小站</a>
+        <a href="//music.163.com/user/444705789" class="button">网易云音乐</a>
+        <a href="//space.bilibili.com/108831145" class="button">Bilibili</a>
+        <a href="//github.com/l33z22l11" class="button">GitHub</a>
+        <a href="//mine.ly/zhilu.2" class="button">Minecraft</a>
+      </div> -->
     </div>
 
     <script type="text/javascript">
-      window.onload = timer;
-      function timer() {
-        var last = new Date() - new Date("Jan 21 2020 12:00:00");
-        var all =
-          new Date("Jul 1 2020 0:00:00") - new Date("Jan 21 2020 12:00:00");
+      window.onload = main;
+      function main() {
+        var platform = navigator.platform;
+        if (platform.match("Win")) {
+          tabswitch();
+        }
+        home();
+        back();
+        rdstart();
+        exam();
+        progress();
+      }
+
+      function home() {
+        var start = new Date("Jan 20 2020");
+        var now = new Date();
+        // var exam = new Date("Jul 1 2020 0:00:00");
+        var days = parseInt((now - start) / 1000 / 60 / 60 / 24, 10);
+        // var thDays = parseInt((exam - now) / 1000 / 60 / 60 / 24, 10);
+        // var thHours = parseInt(((exam - now) / 1000 / 60 / 60) % 24, 10);
+        document.getElementById("hd").innerHTML = days;
+        // document.getElementById("thd").innerHTML = thDays;
+        // document.getElementById("thh").innerHTML = thHours;
+        // var bar = document.getElementById("bar");
+        // bar.style.width = ratio + "%";
+        setTimeout(home, 500);
+      }
+
+      function back() {
+        var start = new Date("Apr 14 2020");
+        var now = new Date();
+        var days = parseInt((start - now) / 1000 / 60 / 60 / 24, 10);
+        document.getElementById("bd").innerHTML = days;
+        setTimeout(back, 500);
+      }
+
+      function exam() {
+        var last = new Date("Jul 7 2020") - new Date();
         var days = parseInt(last / 1000 / 60 / 60 / 24, 10);
         var hours = parseInt((last / 1000 / 60 / 60) % 24, 10);
         var minutes = parseInt((last / 1000 / 60) % 60, 10);
         var seconds = parseInt((last / 1000) % 60, 10);
-        var rate = (last / all) * 100;
-        var percent = parseInt(rate);
-        var cent = parseInt((rate * 100000) % 100000);
-        document.getElementById("d").innerHTML = days;
-        document.getElementById("h").innerHTML = addZero(hours, 2);
-        document.getElementById("m").innerHTML = addZero(minutes, 2);
-        document.getElementById("s").innerHTML = addZero(seconds, 2);
-        document.getElementById("p").innerHTML = percent;
-        document.getElementById("c").innerHTML = addZero(cent, 5); //
-        var tp = document.getElementById("tp");
-        tp.style.width = rate + "%";
-        setTimeout(timer, 500);
+        document.getElementById("ed").innerHTML = days;
+        document.getElementById("eh").innerHTML = addZero(hours, 2);
+        document.getElementById("em").innerHTML = addZero(minutes, 2);
+        document.getElementById("es").innerHTML = addZero(seconds, 2);
+        setTimeout(exam, 500);
+      }
+
+      function rdstart() {
+        var start = new Date("Mar 29 2020");
+        var now = new Date();
+        var days = parseInt((now - start) / 1000 / 60 / 60 / 24, 10);
+        document.getElementById("thd").innerHTML = days;
+        setTimeout(rdstart, 500);
+      }
+
+      function progress() {
+        var preStart = new Date("Feb 9 2020 8:00:00");
+        var now = new Date();
+        var preEnd = new Date("Jul 1 2020 8:00:00");
+        var ratio = ((now - preStart) / (preEnd - preStart)) * 100;
+        var pi = parseInt(ratio);
+        var pd = parseInt((ratio * 100000) % 100000);
+        document.getElementById("pi").innerHTML = pi;
+        document.getElementById("pd").innerHTML = pd;
+        setTimeout(progress, 250);
       }
 
       function addZero(num, digit) {
         return ("000000000000" + num).slice(-digit);
+      }
+
+      function tabswitch() {
+        var tab = document.getElementById("tab");
+        tab.id = "list";
+        var unfold = document.getElementById("unfold");
+        unfold.remove();
+        var unfold = document.getElementById("tabend");
+        tabend.remove();
       }
     </script>
   </body>
