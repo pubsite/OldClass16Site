@@ -11,5 +11,5 @@ description: '一九一六 精神领袖 高二十六 我班最秀'
 
 [![](http://p.qlogo.cn/gh/627555399/627555399/100)![班级群 627555399](https://img.shields.io/badge/班级群-627555399-3aa?style=flat-square&logo=tencent-qq)](https://jq.qq.com/?_wv=1027&k=5HQtRtH)
 
-[![](http://p.qlogo.cn/gh/894656456/84656456/100)宝中野生技术协会 群894656456](//bjzx.zhilu.cyou/ta)
+[![](http://p.qlogo.cn/gh/894656456/894656456/100)![宝中野生技术协会 群894656456](https://img.shields.io/badge/宝中野生技术协会-894656456-3aa?style=flat-square&logo=tencent-qq)]](//bjzx.zhilu.cyou/ta)
 
